@@ -1,55 +1,57 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Container from '../shared/Container';
 
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: ReactNode;
+  path: string
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Save Locally',
+    Svg: require('@site/static/img/svg/local.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        You can store uploaded files directly locally on the machine.
       </>
     ),
+    path: "/img/svg/local.svg",
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Upload to AWS S3',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        With lancer you can upload your media to AWS S3 without any hassel
       </>
     ),
+    path: "/img/svg/s3.svg",
   },
   {
-    title: 'Powered by React',
+    title: 'Integrate with your existing stack',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        You can use our community SDKs to integrate with your backend services.
       </>
     ),
+    path: "/img/svg/cogs.svg",
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description, path }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('flex flex-col gap-16 font-dmono w-max items-center justify-center')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={path} className=' w-[100px]' />
       </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        <Heading as="h3" className=' font-dmono text-xl mb-3'>{title}</Heading>
         <p>{description}</p>
       </div>
     </div>
@@ -58,14 +60,14 @@ function Feature({title, Svg, description}: FeatureItem) {
 
 export default function HomepageFeatures(): ReactNode {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <Container>
+      <section className={"flex items-center lg:gap-0 gap-10 flex-wrap lg:flex-nowrap py-[32px] w-full bg-dark"}>
+
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
+
+      </section>
+    </Container>
   );
 }

@@ -26,13 +26,13 @@ export default function Home(): ReactNode {
               <div className="py-10 flex gap-5">
                 <Link
                   className="bg-white rounded-md text-gray-500 px-4 py-2"
-                  to="/docs/intro"
+                  to="/docs/overview"
                 >
                   Read Docs
                 </Link>
                 <Link
                   className=" text-white font-semibold rounded-md bg-primary text-gray-500 px-4 py-2"
-                  to="/docs/intro"
+                  to="/docs/category/installation"
                 >
                   Installation
                 </Link>

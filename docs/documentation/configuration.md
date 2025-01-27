@@ -5,6 +5,14 @@ title: Configuration
 
 Configuration file allows you to set up and customize the Lancer server. It defines key settings such as the database connection, file storage locations, and webhook endpoints. Below is a breakdown of each configuration parameter:
 
+## Network Configuration
+
+This section contains the settings for running the Lancer at a port
+
+```yaml title="lancer.yaml"
+port: "8080" # port for the lancer server
+```
+
 ## Database Configuration
 
 This section contains the settings for connecting Lancer to your PostgreSQL database.
@@ -43,9 +51,12 @@ redis: "" # The connection URL to the Redis server
 Webhooks allow external systems to be notified about file events (e.g., file uploads, deletions). These endpoints can be used to trigger actions in other systems when specific file events occur.
 
 ```yaml title="lancer.yaml"
+server-auth: false # Whether to authenticate session with server or not
 webhook-endpoint: "" # URL where webhook events will be sent
 auth-endpoint: "" # URL used to authenticate users before uploading files
 ```
+
+- **server-auth** : This is the option which tells Lancer whether to authenticate session with your authentication server which is provided as `auth-endpoint`.
 
 - **webhook-endpoint** :  This is the endpoint URL where Lancer will send notifications when file events occur. For example, a successful upload or deletion of files will trigger a webhook. You can specify a URL for your backend to handle these events.
 
@@ -110,6 +121,7 @@ auth:
 Here’s an example configuration with actual values to give you an idea of how to structure your file:
 
 ```yaml title="lancer.yaml"
+port: "8080"
 database:
   address: "localhost:5432"
   user: "lancer_user"
@@ -119,6 +131,7 @@ database:
 use-redis: true
 redis: "redis://localhost:6379"
 
+server-auth: false
 webhook-endpoint: "http://localhost:3000/webhook"
 auth-endpoint: "http://localhost:3000/auth"
 

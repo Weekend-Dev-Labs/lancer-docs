@@ -1,6 +1,6 @@
 {
   "label": "Documentation",
-  "position": 3,
+  "position": 5,
   "link": {
     "type": "generated-index",
     "description": "Detailed documentation about lancer working and integration methods."

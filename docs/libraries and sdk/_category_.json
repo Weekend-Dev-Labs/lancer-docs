@@ -1,0 +1,8 @@
+{
+  "label": "Libraries & SDK",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Lancer provides you with libraries & SDK to integrate with your tech stack easily. It has both client and server side SDK."
+  }
+}

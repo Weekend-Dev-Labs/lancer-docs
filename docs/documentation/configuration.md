@@ -82,7 +82,6 @@ store:
 
 - ### AWS S3 Storage (optional)
 
-
 ```yaml title="lancer.yaml"
 aws:
   store: false # Set to 'true' to enable AWS S3 storage for uploaded files

@@ -8,7 +8,7 @@ title: Next.js Server SDK
 Install the SDK via npm:
 
 ```bash
-npm install @lancer/next
+npm install lancer-next-sdk
 ```
 
 ---
@@ -20,7 +20,7 @@ npm install @lancer/next
 Create a reusable instance of the `Lancer` class with your `webhookSecret` for signature verification. Store this in a shared module for easy access across your API routes.
 
 ```typescript
-import Lancer from "@lancer/next";
+import Lancer from "lancer-next-sdk";
 
 const lancer = new Lancer({
   webhookSecret: "<your-lancer-webhook-secret>",

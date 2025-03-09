@@ -56,7 +56,13 @@ This is the basic configuration which you need to have to run your application. 
 Now apply migration to database using this command. Make sure you have provided a correct connection details for the database.
 
 ```bash
-lancer migrate
+lancer --database-migrate=true
+```
+
+**If using custom configuration : **
+
+```bash
+lancer --config=lancer.yaml --database-migrate=true
 ```
 
 This will apply the migration to the database.

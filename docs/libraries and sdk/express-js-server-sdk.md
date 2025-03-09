@@ -8,7 +8,7 @@ title: Express.js SDK
 Install the SDK via npm:
 
 ```bash
-npm install @lancer/express
+npm install lancer-express-sdk
 ```
 
 ---
@@ -20,7 +20,7 @@ npm install @lancer/express
 Create a reusable instance of the `lancer` function with your `signingSecret` for signature verification. Store this in a shared module for easy access across your API routes.
 
 ```typescript
-import lancer from "@lancer/express";
+import lancer from "lancer-express-sdk";
 
 const lancerInstance = lancer({
   signingSecret: "<your-lancer-signing-secret>",

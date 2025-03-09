@@ -1,6 +1,6 @@
 {
   "label": "Installation",
-  "position": 2,
+  "position": 1,
   "link": {
     "type": "generated-index",
     "description": "Here you can find the installation manual for the platform you want to run lancer on."

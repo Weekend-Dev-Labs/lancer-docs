@@ -58,11 +58,9 @@ auth-endpoint: "" # URL used to authenticate users before uploading files
 
 - **server-auth** : This is the option which tells Lancer whether to authenticate session with your authentication server which is provided as `auth-endpoint`.
 
-- **webhook-endpoint** :  This is the endpoint URL where Lancer will send notifications when file events occur. For example, a successful upload or deletion of files will trigger a webhook. You can specify a URL for your backend to handle these events.
+- **webhook-endpoint** : This is the endpoint URL where Lancer will send notifications when file events occur. For example, a successful upload or deletion of files will trigger a webhook. You can specify a URL for your backend to handle these events.
 
 - **auth-endpoint** : This is an authentication endpoint that ensures only authorized users can upload files to the server. You can configure this to point to an authentication service where user credentials are verified before allowing uploads.
-
-
 
 ## File Storage Configuration
 
@@ -88,6 +86,8 @@ aws:
   bucket: "" # AWS S3 bucket name
   region: "" # AWS region where the bucket is located
   config: "" # Path to the AWS configuration file (credentials and settings)
+  clientId: "" # AWS Client ID
+  clientSecret: "" # AWS Client Secret
 ```
 
 - **aws.store**: Set this to true if you want to use AWS S3 for file storage. If set to false, Lancer will use local storage instead.
@@ -96,7 +96,9 @@ aws:
 
 - **region** : The AWS region where your S3 bucket is located (e.g., us-east-1, eu-west-1).
 
-- **config** : The path to your AWS credentials configuration file. This file should contain your AWS access key and secret key, which are used to authenticate requests to AWS services.
+- **clientId** : The AWS Client ID use to upload media to S3 bucket.
+
+- **clientSecret** : The AWS Client Secret use to upload media to S3 bucket.
 
 ## Admin Configuration
 
@@ -142,14 +144,14 @@ store:
     store: true
     bucket: "my-lancer-bucket"
     region: "us-east-1"
-    config: "/path/to/aws/credentials"
+    clientId: "" # AWS Client ID
+    clientSecret: "" # AWS Client Secret
 
 admin-token-secret: "supersecretkey123"
 auth:
   email: "admin@lancer.com"
   password: "adminpassword123"
 ```
-
 
 ## Conclusion
 

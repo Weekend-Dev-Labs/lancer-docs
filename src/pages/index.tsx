@@ -26,7 +26,7 @@ export default function Home(): ReactNode {
               <div className="py-10 flex gap-5">
                 <Link
                   className="bg-white rounded-md text-gray-500 px-4 py-2"
-                  to="/docs/overview"
+                  to="/docs/quickstart"
                 >
                   Read Docs
                 </Link>

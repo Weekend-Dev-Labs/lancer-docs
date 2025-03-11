@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
-import styles from './styles.module.css';
 import Container from '../shared/Container';
 
 type FeatureItem = {
@@ -20,7 +19,7 @@ const FeatureList: FeatureItem[] = [
         You can store uploaded files directly locally on the machine.
       </>
     ),
-    path: "/img/svg/local.svg",
+    path: "/lancer-docs/img/svg/local.svg",
   },
   {
     title: 'Upload to AWS S3',
@@ -30,7 +29,7 @@ const FeatureList: FeatureItem[] = [
         With lancer you can upload your media to AWS S3 without any hassel
       </>
     ),
-    path: "/img/svg/s3.svg",
+    path: "/lancer-docs/img/svg/s3.svg",
   },
   {
     title: 'Integrate with your existing stack',
@@ -40,7 +39,7 @@ const FeatureList: FeatureItem[] = [
         You can use our community SDKs to integrate with your backend services.
       </>
     ),
-    path: "/img/svg/cogs.svg",
+    path: "/lancer-docs/img/svg/cogs.svg",
   },
 ];
 

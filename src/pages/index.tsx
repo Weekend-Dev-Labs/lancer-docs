@@ -5,6 +5,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
+import image from "../../static/img/lancer.svg";
+
 import "./tailwind.css";
 
 export default function Home(): ReactNode {
@@ -40,7 +42,7 @@ export default function Home(): ReactNode {
             </div>
 
             <div className=' flex items-center justify-center'>
-              <img src='/img/lancer.png' className=' w-4/5 h-4/5' />
+              <img src={"/lancer-docs/img/lancer.svg"} className=' w-4/5 h-4/5' />
             </div>
           </div>
         </header>
